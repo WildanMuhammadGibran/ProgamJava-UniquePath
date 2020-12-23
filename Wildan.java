@@ -32,11 +32,11 @@ public class Main {
 
 		for (int b = 0; b < gridWidth; b++ ) {
 			
-			nomorPath[b][0] = 1; // beri tahu bahwa baris 1 di index pertama itu bernilai 1
+			nomorPath[b][0] = 1; // beri tahu bahwa baris 1 di index pertama itu value 1
 		}
 
 		for (int k = 0; k < gridHeight; k++ ) {
-			nomorPath[0][k] = 1; // beri tahu bahwa kolom 1 di index pertama itu bernilai 1
+			nomorPath[0][k] = 1; // beri tahu bahwa kolom 1 di index pertama itu value 1
 		}
 
 		for (int b = 1; b <gridWidth; b++ ) {
