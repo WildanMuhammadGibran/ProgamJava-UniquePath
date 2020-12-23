@@ -32,17 +32,17 @@ public class Main {
 
 		for (int b = 0; b < gridWidth; b++ ) {
 			
-			nomorPath[b][0] = 1; // beri tahu bahwa baris 1 di index pertama itu bernilai 1
+			nomorPath[b][0] = 1; // beri tahu bahwa baris 1 di index pertama itu value 1
 		}
 
 		for (int k = 0; k < gridHeight; k++ ) {
-			nomorPath[0][k] = 1; // beri tahu bahwa kolom 1 di index pertama itu bernilai 1
+			nomorPath[0][k] = 1; // beri tahu bahwa kolom 1 di index pertama itu value 1
 		}
 
 		for (int b = 1; b <gridWidth; b++ ) {
 			for (int k = 1; k < gridHeight; k++ ) {
 
-				nomorPath[b][k] = nomorPath[b-1][k] + nomorPath[b][k-1]; // di kurangi 1 karena tidak boleh jalan ke lawan arah
+				nomorPath[b][k] = nomorPath[b-1][k] + nomorPath[b][k-1]; // di kurangi 1 karena tidak boleh jalan ke lawan arah.
 
 			}
 		}
@@ -62,7 +62,7 @@ public class Main {
 		System.out.print("kolom = ");
 		int inputUser2 = scanner.nextInt();
 		clearCMD(); // untuk merapihkan CMD atau Terminal
-		System.out.println("\nBanyak kemungkinan jalan untuk dari top left ke bottom right hanya bisa jalan ke kanan dan ke bawah adalah = ");
+		System.out.println("\nBanyak kemungkinan jalan untuk dari top left ke bottom right dan hanya bisa jalan ke kanan dan ke bawah = ");
 		System.out.println("\n Jumlah = "+total_path(inputUser1,inputUser2));
 
 
