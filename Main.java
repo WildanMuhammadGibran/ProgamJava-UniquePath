@@ -3,66 +3,61 @@ import java.util.Scanner;
 
 public class Main {
 
-	/**
-	* Instagram @wilmg.id
-	*
-	* Baris = b
-	* Kolom = k
-	* gridWidth = jumlah b
-	* gridHeight = jumlah k
-	*/
-
-
 	static int total_path(int gridWidth, int gridHeight){
 
-		// jika user input gridWidth atau gridHeight adalah
+		/* jika user input nilai gridWidth-nya atau gridHeight-nya adalah
+		   0 atau 1 */
 
 		if (gridWidth == 0 || gridHeight == 0) {
 
-			return 0;
+			return 0; // nilai 0 karena ga ada baris dan kolom
 		} else if (gridWidth == 1 || gridHeight == 1) {
 
-			return 1;
+			return 1; // nilai 1 karena hannya ada 1 jalan
 		}
 
-		// int[baris][kolom]
+		// buat panjang baris dan panjang kolomnya
+		// int[index baris][index kolom]
 
-		int[][] nomorPath = new int[gridWidth][gridHeight];
-
+		int[][] nomorPath = new int[gridWidth][gridHeight]; 
 
 		for (int b = 0; b < gridWidth; b++ ) {
 			
-			nomorPath[b][0] = 1; // beri tahu bahwa baris 1 di index pertama itu value 1
+			nomorPath[b][0] = 1; /* beri nilai cell di index 0 nya baris
+									adalah 1 , harus 1*/
 		}
 
 		for (int k = 0; k < gridHeight; k++ ) {
-			nomorPath[0][k] = 1; // beri tahu bahwa kolom 1 di index pertama itu value 1
+			nomorPath[0][k] = 1; /* beri nilai cell di index 0 nya kolom
+									adalah 1 , harus 1. */
 		}
 
 		for (int b = 1; b <gridWidth; b++ ) {
 			for (int k = 1; k < gridHeight; k++ ) {
 
-				nomorPath[b][k] = nomorPath[b-1][k] + nomorPath[b][k-1]; // di kurangi 1 karena tidak boleh jalan ke lawan arah.
-
+				nomorPath[b][k] = nomorPath[b-1][k] + nomorPath[b][k-1]; 
+				/* di kurangi 1 agar cell-cell di index 0 tidak terbawa
+				   karena di atas sudah di berikan nilai cell-cell di index 0 
+				   yaitu bernilai 1
+				*/ 
 			}
 		}
-
-
 		return nomorPath[gridWidth - 1][gridHeight - 1];
+		// di kurangi 1 karena ini dalam index serta index itu di mulai dari 0. 
 	}
 
 	public static void main(String[] args) {
 
 		Scanner scanner = new Scanner(System.in);
 
-		System.out.println("Masukan jumlah baris");
+		System.out.println("Masukan jumlah baris !");
 		System.out.print("baris = ");
-		int inputUser1 = scanner.nextInt();
-		System.out.println("\nMasukan jumlah kolom");
-		System.out.print("kolom = ");
-		int inputUser2 = scanner.nextInt();
-		clearCMD(); // untuk merapihkan CMD atau Terminal
-		System.out.println("\nBanyak kemungkinan jalan untuk dari top left ke bottom right dan hanya bisa jalan ke kanan dan ke bawah = ");
+		int inputUser1 = scanner.nextInt();  // input user gridWidth
+		System.out.println("\nMasukan jumlah kolom !");
+		System.out.print("kolom = "); 
+		int inputUser2 = scanner.nextInt(); // input user gridHeight
+		clearCMD(); // untuk center View di CMD/Terminal
+		System.out.print("\nBanyak kemungkinannya = ");
 		System.out.println("\n Jumlah = "+total_path(inputUser1,inputUser2));
 
 
