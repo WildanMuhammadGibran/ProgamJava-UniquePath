@@ -56,7 +56,7 @@ public class Wildan {
 		Scanner scanner = new Scanner(System.in);
 
 		System.out.println("Author : Wildan Muhammad Gibran\n");
-		System.out.println("Masukan jumlah baris dan jumlah kolom");
+		System.out.println("Masukan jumlah baris");
 		System.out.print("baris = ");
 		int inputUser1 = scanner.nextInt();
 		System.out.println("\nMasukan jumlah kolom");
