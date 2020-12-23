@@ -36,10 +36,7 @@ public class Main {
 			for (int k = 1; k < gridHeight; k++ ) {
 
 				nomorPath[b][k] = nomorPath[b-1][k] + nomorPath[b][k-1]; 
-				/* di kurangi 1 agar cell-cell di index 0 tidak terbawa
-				   karena di atas sudah di berikan nilai cell-cell di index 0 
-				   yaitu bernilai 1
-				*/ 
+				// di kurangi 1 agar cell-cell di index 0 terbawa juga.
 			}
 		}
 		return nomorPath[gridWidth - 1][gridHeight - 1];
