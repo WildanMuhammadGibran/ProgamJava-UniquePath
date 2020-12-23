@@ -15,8 +15,8 @@ public class Wildan {
 
 	static int total_path(int gridWidth, int gridHeight){
 
-		// jika user input 
-
+		 
+		// Jika User Input baris atau kolom bernilai 0 atau 1
 		if (gridWidth == 0 || gridHeight == 0) {
 
 			return 0;
@@ -25,7 +25,7 @@ public class Wildan {
 			return 1;
 		}
 
-		// int[baris][kolom]
+		// int[index baris][index kolom]
 
 		int[][] nomorPath = new int[gridWidth][gridHeight];
 
