@@ -1,7 +1,7 @@
 import java.util.Scanner;
 
 
-public class Wildan {
+public class Main {
 
 	/**
 	* Instagram @wilmg.id
