@@ -8,8 +8,8 @@ public class Main {
 	*
 	* Baris = b
 	* Kolom = k
-	* m = jumlah b
-	* n = jumlah k
+	* gridWidth = jumlah b
+	* gridHeight = jumlah k
 	*/
 
 
